@@ -11,12 +11,12 @@ export default function SearchInput() {
     e.preventDefault();
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // Wait for half second to call API to check if user will add anything to the input
+    // Wait for  second to call API to check if user will add anything to the input
     clearTimeout(timeoutId);
     const newTimeoutId = setTimeout(() => {
       console.log("Performing search...");
       router.push(`/search/q=${e.target.value}`);
-    }, 500);
+    }, 1000);
     // Update the query state and the timeout ID
     setQuery(e.target.value);
     setTimeoutId(newTimeoutId);

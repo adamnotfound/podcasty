@@ -72,7 +72,7 @@ export default function CardItem({
       });
     }
     return (
-      <div className="episode-card rounded-md transition duration-300 m-2 cursor-pointer text-xs flex overflow-hidden relative">
+      <div className="episode-card rounded-md transition duration-300 m-2 mb-1 cursor-pointer text-xs flex overflow-hidden relative">
         {image && (
           <div className="w-32 h-28 bg-gray-800">
             <img
@@ -94,12 +94,12 @@ export default function CardItem({
               </p>
             )}
 
-            <h3 className="text-xs pt-1 col-span-10 hover:underline">
+            <h3 className="text-xs pt-1  col-span-10 hover:underline">
               {heading}
             </h3>
           </div>
 
-          <p className="text-gray-300">
+          <p className="text-gray-300 mt-3">
             <span className="mr-3">{formatDate(date)}</span>
             <span> {formatDuration(duration)}</span>
           </p>
