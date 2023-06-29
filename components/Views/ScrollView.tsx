@@ -16,6 +16,10 @@ interface IProps {
 const ScrollView: ComponentType<IProps> = ({ items, swiperRef, type }) => {
   const slidesPerView = 2;
   const breakpoints = {
+    320: {
+      slidesPerView: type === "podcast" ? 2 : 1,
+      slidesPerGroup: type === "podcast" ? 2 : 1,
+    },
     640: {
       slidesPerView: type === "podcast" ? 2 : 1,
       slidesPerGroup: type === "podcast" ? 2 : 1,
@@ -25,8 +29,8 @@ const ScrollView: ComponentType<IProps> = ({ items, swiperRef, type }) => {
       slidesPerGroup: type === "podcast" ? 3 : 1,
     },
     1024: {
-      slidesPerView: type === "podcast" ? 5 : 2,
-      slidesPerGroup: type === "podcast" ? 5 : 2,
+      slidesPerView: type === "podcast" ? 5 : 1,
+      slidesPerGroup: type === "podcast" ? 5 : 1,
     },
     1280: {
       slidesPerView: type === "podcast" ? 5 : 3,
