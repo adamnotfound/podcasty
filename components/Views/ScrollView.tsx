@@ -22,7 +22,7 @@ const ScrollView: ComponentType<IProps> = ({ items, swiperRef, type }) => {
     },
     768: {
       slidesPerView: type === "podcast" ? 3 : 1,
-      slidesPerGroup: 3,
+      slidesPerGroup: type === "podcast" ? 3 : 1,
     },
     1024: {
       slidesPerView: type === "podcast" ? 5 : 2,
