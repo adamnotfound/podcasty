@@ -25,7 +25,7 @@ const SectionHeader = ({
       className={`pr-3 container  h-12 mt-2 flex flex-row justify-between border-b border-solid border-[#2e2e33]  ${className}`}
     >
       <h1
-        className={`section-header-title mt-1 inline-block font-bold pt-1 pl-4 md:pl-5`}
+        className={`section-header-title text-white mt-1 inline-block font-bold pt-1 pl-4 md:pl-5`}
       >
         {title}
       </h1>

@@ -31,7 +31,7 @@ export default function Header() {
         <button className="rounded-none w-full bg-black ">Login</button>
         <button className="rounded-none w-full bg-black ">Register</button>
       </div> */}
-      <div className="text-lg">
+      <div className="text-lg text-white">
         <ListIcon />
       </div>
     </header>

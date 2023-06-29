@@ -32,7 +32,7 @@ export default function CardItem({
             />
           </div>
         )}
-        <div className="mt-3 grid grid-cols-12 gap-4 relative">
+        <div className="mt-3 grid grid-cols-12 gap-4 relative text-white">
           <h3 className="text-sm col-span-10 font-bold truncate hover:underline">
             {heading}
           </h3>
@@ -94,7 +94,7 @@ export default function CardItem({
               </p>
             )}
 
-            <h3 className="text-xs pt-1  col-span-10 hover:underline">
+          <h3 className="text-xs pt-1  col-span-10 hover:underline text-white">
               {heading}
             </h3>
           </div>
