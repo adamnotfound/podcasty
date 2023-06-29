@@ -13,14 +13,15 @@ export default function Home({ podcasts, episodes }: IProps) {
         title={`Latest podcasts`}
         initialView="Scroll"
         items={podcasts}
+        type="podcast"
       />
-      <SectionView title={`Latest episodes`} items={episodes} />
+      <SectionView title={`Latest episodes`} items={episodes} type="episode" />
     </>
   );
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const resultsResponse = await fetch(`${process.env.API_URL}/search/home`);
+  const resultsResponse = await fetch(`${process.env.API_URL}/search/فنجان`);
   let data = [];
   if (resultsResponse.status !== 200)
     return { props: { podcasts: [], episodes: [] } };

@@ -16,6 +16,8 @@ interface Media {
   artworkUrl100: string;
   artworkUrl60: string;
   hue: string;
+  trackTimeMillis: number;
+  releaseDate: string;
 }
 
 export interface Podcast extends Media {
@@ -41,4 +43,6 @@ export interface CardItem {
   hue?: string;
   imageRounded?: boolean;
   type: string;
+  duration: number;
+  date: string;
 }

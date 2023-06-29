@@ -22,9 +22,11 @@ const SectionHeader = ({
   const [show, setShow] = React.useState(false);
   return (
     <div
-      className={`pr-3 container h-12 mt-2 flex flex-row justify-between border-b border-solid border-[#2e2e33]  ${className}`}
+      className={`pr-3 container  h-12 mt-2 flex flex-row justify-between border-b border-solid border-[#2e2e33]  ${className}`}
     >
-      <h1 className={`text-md inline-block font-bold pt-1 pl-4 md:pl-5`}>
+      <h1
+        className={`section-header-title mt-1 inline-block font-bold pt-1 pl-4 md:pl-5`}
+      >
         {title}
       </h1>
       <div className="flex flex-row text-gray-400 mb-3 text-xs font-bold">

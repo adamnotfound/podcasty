@@ -5,7 +5,7 @@ import {
   PodcastsIcon,
   QueueIcon,
   RecentsIcon,
-} from "./Icons";
+} from "../Icons";
 
 const navList: NavItem[] = [
   {

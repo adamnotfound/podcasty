@@ -9,17 +9,18 @@ interface SectionProps {
   title?: string;
   items: (Podcast | Episode)[];
   initialView?: string;
+  type: string;
 }
 
-const SectionView = ({ title, items, initialView }: SectionProps) => {
+const SectionView = ({ title, items, initialView, type }: SectionProps) => {
   const _swiperRef = React.useRef<SwiperCore>();
   const [view, setView] = React.useState(initialView ? initialView : "Grid");
   const getView = () => {
     switch (view) {
       case "Grid":
-        return <GridView items={items} />;
+        return <GridView type={type} items={items} />;
       case "Scroll":
-        return <ScrollView items={items} swiperRef={_swiperRef} />;
+        return <ScrollView type={type} items={items} swiperRef={_swiperRef} />;
       default:
         break;
     }

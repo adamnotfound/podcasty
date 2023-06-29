@@ -1,4 +1,4 @@
-import CardItem from "../CardItem";
+import CardItem from "./CardItem";
 import { Podcast, Episode } from "../../types/types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -9,32 +9,34 @@ import { ComponentType } from "react";
 
 interface IProps {
   items: (Podcast | Episode)[];
+  type: string;
   swiperRef: any;
 }
-const slidesPerView = 2;
-const breakpoints = {
-  640: {
-    slidesPerView: 2,
-    slidesPerGroup: 2,
-  },
-  768: {
-    slidesPerView: 3,
-    slidesPerGroup: 3,
-  },
-  1024: {
-    slidesPerView: 5,
-    slidesPerGroup: 5,
-  },
-  1280: {
-    slidesPerView: 5,
-    slidesPerGroup: 5,
-  },
-  1536: {
-    slidesPerView: 5,
-    slidesPerGroup: 5,
-  },
-};
-const ScrollView: ComponentType<IProps> = ({ items, swiperRef }) => {
+
+const ScrollView: ComponentType<IProps> = ({ items, swiperRef, type }) => {
+  const slidesPerView = 2;
+  const breakpoints = {
+    640: {
+      slidesPerView: type === "podcast" ? 2 : 1,
+      slidesPerGroup: type === "podcast" ? 2 : 1,
+    },
+    768: {
+      slidesPerView: type === "podcast" ? 3 : 1,
+      slidesPerGroup: 3,
+    },
+    1024: {
+      slidesPerView: type === "podcast" ? 5 : 2,
+      slidesPerGroup: type === "podcast" ? 5 : 2,
+    },
+    1280: {
+      slidesPerView: type === "podcast" ? 5 : 3,
+      slidesPerGroup: type === "podcast" ? 5 : 3,
+    },
+    1536: {
+      slidesPerView: type === "podcast" ? 5 : 3,
+      slidesPerGroup: type === "podcast" ? 5 : 3,
+    },
+  };
   return (
     <div className="p-3 h-70">
       <Swiper
@@ -54,7 +56,7 @@ const ScrollView: ComponentType<IProps> = ({ items, swiperRef }) => {
       >
         {items.length > 0 ? (
           items?.map((i) => (
-            <SwiperSlide key={i.trackId}>
+            <SwiperSlide className="pb-5" key={i.trackId}>
               <CardItem
                 key={i.trackId}
                 id={i.trackId}
@@ -64,6 +66,8 @@ const ScrollView: ComponentType<IProps> = ({ items, swiperRef }) => {
                 subheading={i.collectionName}
                 hue={i.hue}
                 type={i.kind}
+                duration={i.trackTimeMillis}
+                date={i.releaseDate}
               />
             </SwiperSlide>
           ))

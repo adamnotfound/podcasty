@@ -22,10 +22,12 @@ export default function Home({ searchWord, podcasts, episodes }: IProps) {
             title={`Latest podcasts for ${searchWord}`}
             initialView="Scroll"
             items={podcasts}
+            type="podcast"
           />
           <SectionView
             title={`Latest episodes for ${searchWord}`}
             items={episodes}
+            type="episode"
           />
         </>
       )}

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { NavItem } from "../types/types";
+import { NavItem } from "../../types/types";
 import navList from "./NavigationList";
 
 const activeLink = "text-[#ba6fde]";

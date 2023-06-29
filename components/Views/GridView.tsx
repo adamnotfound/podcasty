@@ -1,16 +1,17 @@
-import CardItem from "../CardItem";
+import CardItem from "./CardItem";
 import { Podcast, Episode } from "../../types/types";
-import CardItemGrid from "../CardItemGrid";
+import CardItemGrid from "./CardItemGrid";
 
 interface IProps {
   items: (Podcast | Episode)[];
+  type: string;
 }
 
-export default function GridView({ items }: IProps) {
+export default function GridView({ items, type }: IProps) {
   return (
     <>
       {items.length > 0 ? (
-        <CardItemGrid>
+        <CardItemGrid type={type}>
           {items.map((i) => (
             <CardItem
               key={i.trackId}
@@ -21,6 +22,8 @@ export default function GridView({ items }: IProps) {
               subheading={i.collectionName}
               hue={i.hue}
               type={i.kind}
+              duration={i.trackTimeMillis}
+              date={i.releaseDate}
             />
           ))}
         </CardItemGrid>
